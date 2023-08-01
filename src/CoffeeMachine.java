@@ -44,22 +44,24 @@ public class CoffeeMachine implements  ICoffeeMachine{
 
     Coffee coffee =new Coffee();
 
+
+
     @Override
     public void makeCoffee(Coffee coffee) {
         if (this.balance >= coffee.getCoffeePrice() &&
-                this.waterlevel >= coffee.getWater() &&
-                this.coffeeBeans >= coffee.getCoffeeBean() &&
-                this.milk >= coffee.getMilk() &&
+                this.waterlevel >= 200 &&
+                this.coffeeBeans >= 16   &&
+                this.milk >= 75 &&
                 this.disposableCup >= 1) {
             System.out.println("커피를 구매 하셨습니다! 감사합니다");
             System.out.println(coffee.getCoffeeName() + " 가 준비되었습니다! 맛있게 드세요!");
-            this.balance -= coffee.getCoffeePrice();
-            this.waterlevel -= coffee.getWater();
-            this.coffeeBeans -= coffee.getCoffeeBean();
+            this.balance -=coffee.getCoffeePrice();
+            this.waterlevel -=coffee.getWater();
+            this.coffeeBeans -=coffee.getCoffeeBean();
             this.milk -= coffee.getMilk();
             this.disposableCup--;
 
-        }  else if(this.balance <this.coffee.getCoffeePrice()){
+        }  else if(this.balance < this.coffee.getCoffeePrice()){
           System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
       }else if (this.coffee.getMilk() < coffee.getMilk()){
             System.out.println("우유를 리필 해주세요!");
@@ -75,7 +77,7 @@ public class CoffeeMachine implements  ICoffeeMachine{
         System.out.println(amount + " 원 충전됩니다!" + " 현재 잔고는  " +  this.balance + " 입니다 .");
 
     }
-
+    @Override
     public void outCoin(int amount){
         this.balance -=amount;
         System.out.println(amount + " 원 인출 되었습니다!");
@@ -108,7 +110,7 @@ public class CoffeeMachine implements  ICoffeeMachine{
         System.out.println(amount + " 개 충전됩니다!");
     }
 
-
+@Override
     public void now(){
         System.out.println("남은 재료와 돈상태 : ");
         System.out.println("현재 잔고 :  " + getBalance());
@@ -117,8 +119,6 @@ public class CoffeeMachine implements  ICoffeeMachine{
         System.out.println("현재 원두(g) :  " + getCoffeeBeans());
         System.out.println("현재 우유(ml)   " + getMilk());
     }
-
-
 
 
 

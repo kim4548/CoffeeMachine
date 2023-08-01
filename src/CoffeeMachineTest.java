@@ -35,11 +35,11 @@ public class CoffeeMachineTest {
                      System.out.println("2. 라떼 ( 가격 : 7000원 )");
                      System.out.println("3. 카푸치노 ( 가격 : 6000원 )");
                      int choiceCoffeeNum = scanner.nextInt();
-                     if (choiceCoffeeNum == 1 ) {
+                     if (choiceCoffeeNum ==1 ) {
                          coffeeMachine.makeCoffee(espresso);
                          System.out.println();
                          coffeeMachine.now();
-                     } else if (choiceCoffeeNum == 2) {
+                     } else if (choiceCoffeeNum ==2) {
                          coffeeMachine.makeCoffee(latte);
                          System.out.println();
                          coffeeMachine.now();
@@ -94,11 +94,14 @@ public class CoffeeMachineTest {
                              System.out.println("종료 합니다!");
                              break;
                      }
+                     break;
+
                  case 4:
                      System.out.println("금액을 인출합니다!");
                      int Exmoney = scanner.nextInt();
                      coffeeMachine.outCoin(Exmoney);
                      break;
+
                  case 5:
                      System.out.println("커피 머신기를 종료 합니다!");
                      break;
