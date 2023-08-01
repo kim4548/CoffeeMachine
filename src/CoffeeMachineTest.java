@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CoffeeMachineTest {
@@ -20,8 +21,8 @@ public class CoffeeMachineTest {
             System.out.println("1.잔량 | 2. 커피  | 3. 리필 | 4. 인출 | 5.종료");
             System.out.println("==========================================");
             System.out.print("선택 >  ");
-             choice = scanner.nextInt();
-
+            try {
+                choice = scanner.nextInt();
              switch (choice){
 
                  case 1:
@@ -103,6 +104,10 @@ public class CoffeeMachineTest {
                      break;
 
              }
+            }catch (InputMismatchException e){
+                scanner.next();
+                System.out.println("숫자로만 입력해주세요!");
+            }
         }
     }
 }
