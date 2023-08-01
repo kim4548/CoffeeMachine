@@ -1,4 +1,5 @@
 public class Coffee {
+
     private String coffeeName;  //커피 이름
     private int coffeePrice;     //커피 가격
     private int coffeeBean;   // 원두양

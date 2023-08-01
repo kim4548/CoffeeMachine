@@ -104,7 +104,9 @@ public class CoffeeMachineTest {
 
                  case 5:
                      System.out.println("커피 머신기를 종료 합니다!");
-                     break;
+                     System.out.println("프로그램을 종료합니다.");
+                     scanner.close();
+                     return;
 
              }
             }catch (InputMismatchException e){
