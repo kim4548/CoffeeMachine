@@ -93,7 +93,6 @@ public class CoffeeMachineTest {
                              System.out.println("종료 합니다!");
                              break;
                      }
-
                  case 4:
                      System.out.println("커피 머신을 종료합니다!");
                      break;

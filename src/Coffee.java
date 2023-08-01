@@ -12,10 +12,6 @@ public class Coffee {
     public Coffee() {
     }
 
-    public Coffee(String coffeeName, int coffeePrice) {
-        this.coffeeName = coffeeName;
-        this.coffeePrice = coffeePrice;
-    }
 
 
     public Coffee(String coffeeName, int coffeePrice, int coffeeBean, int milk, int disposableCup ,int water) {
@@ -45,23 +41,6 @@ public class Coffee {
     }
 
 
-
-
-    public void  setWater(int water){
-        this.water = water;
-    }
-
-    public void setCoffeeBean(int coffeeBean) {
-        this.coffeeBean = coffeeBean;
-    }
-
-    public void setMilk(int milk) {
-        this.milk = milk;
-    }
-
-    public void setDisposableCup(int disposableCup) {
-        this.disposableCup = disposableCup;
-    }
 
     public String getCoffeeName() {
         return coffeeName;
