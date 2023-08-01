@@ -61,8 +61,6 @@ public class CoffeeMachine extends Coffee implements  ICoffeeMachine {
             this.milk -= coffee.getMilk();
             this.disposableCup--;
 
-        } else if (this.balance < coffee.getCoffeePrice()) {
-            System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
         } else {
             if (this.balance < coffee.getCoffeePrice()) {
                 System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
