@@ -76,6 +76,14 @@ public class CoffeeMachine implements  ICoffeeMachine{
 
     }
 
+    public void outCoin(int amount){
+        this.balance -=amount;
+        System.out.println(amount + " 원 인출 되었습니다!");
+    }
+
+
+
+
     @Override
     public void refillWater(int amount) {
         this.waterlevel += amount;

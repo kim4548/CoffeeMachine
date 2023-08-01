@@ -15,10 +15,10 @@ public class CoffeeMachineTest {
 
 
         while (true){
-            System.out.println("=======================================");
+            System.out.println("==========================================");
             System.out.println("옵션을 선택하세요!");
-            System.out.println("1.잔량 | 2. 커피  | 3. 리필 | 4. 종료 ");
-            System.out.println("=======================================");
+            System.out.println("1.잔량 | 2. 커피  | 3. 리필 | 4. 인출 | 5.종료");
+            System.out.println("==========================================");
             System.out.print("선택 >  ");
              choice = scanner.nextInt();
 
@@ -94,8 +94,14 @@ public class CoffeeMachineTest {
                              break;
                      }
                  case 4:
-                     System.out.println("커피 머신을 종료합니다!");
+                     System.out.println("금액을 인출합니다!");
+                     int Exmoney = scanner.nextInt();
+                     coffeeMachine.outCoin(Exmoney);
                      break;
+                 case 5:
+                     System.out.println("커피 머신기를 종료 합니다!");
+                     break;
+
              }
         }
     }
