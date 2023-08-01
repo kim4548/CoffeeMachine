@@ -49,26 +49,36 @@ public class CoffeeMachine extends Coffee implements  ICoffeeMachine {
     @Override
     public void makeCoffee(Coffee coffee) {
         if (this.balance >= coffee.getCoffeePrice() &&
-                this.waterlevel >=  coffee.getWater() &&
+                this.waterlevel >= coffee.getWater() &&
                 this.coffeeBeans >= coffee.getCoffeeBean() &&
-                this.milk >= coffee.getMilk()&&
+                this.milk >= coffee.getMilk() &&
                 this.disposableCup >= coffee.getDisposableCup()) {
             System.out.println("커피를 구매 하셨습니다! 감사합니다");
             System.out.println(coffee.getCoffeeName() + " 가 준비되었습니다! 맛있게 드세요!");
-            this.balance -=coffee.getCoffeePrice();
-            this.waterlevel -=coffee.getWater();
-            this.coffeeBeans -=coffee.getCoffeeBean();
+            this.balance -= coffee.getCoffeePrice();
+            this.waterlevel -= coffee.getWater();
+            this.coffeeBeans -= coffee.getCoffeeBean();
             this.milk -= coffee.getMilk();
             this.disposableCup--;
 
-        }  else if(this.balance < coffee.getCoffeePrice()){
-          System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
-      }else if (this.waterlevel < coffee.getMilk()){
-            System.out.println("우유를 리필 해주세요!");
-      } else if (this.coffeeBeans < coffee.getCoffeeBean()) {
-            System.out.println("원두를 리필 해주세요!");
-        }  else if (this.disposableCup < 1){
-            System.out.println("일회용 컵을 채워주세요!");
+        } else if (this.balance < coffee.getCoffeePrice()) {
+            System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
+        } else {
+            if (this.balance < coffee.getCoffeePrice()) {
+                System.out.println("금액이 부족합니다! " + (coffee.getCoffeePrice() - this.balance) + " 금액이 필요합니다");
+            }
+            if (this.waterlevel < coffee.getWater()) {
+                System.out.println("물을 리필 해주세요!");
+            }
+            if (this.coffeeBeans < coffee.getCoffeeBean()) {
+                System.out.println("원두를 리필 해주세요!");
+            }
+            if (this.milk < coffee.getMilk()) {
+                System.out.println("우유를 리필 해주세요!");
+            }
+            if (this.disposableCup < coffee.getDisposableCup()) {
+                System.out.println("일회용 컵을 채워주세요!");
+            }
         }
     }
     @Override
